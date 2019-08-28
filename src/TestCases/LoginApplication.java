@@ -1,5 +1,6 @@
 package TestCases;
 
+import ObjectRepository.RediffHomePage;
 import ObjectRepository.RediffLoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,12 +16,18 @@ public class LoginApplication {
         WebDriver driver = new ChromeDriver();
         driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
 
+        //Login page
         RediffLoginPage rd = new RediffLoginPage(driver);
 
         rd.EmailID().sendKeys("hello");
         rd.Password().sendKeys("password");
         rd.ClickGo().click();
 
+
+        //Home page
+        RediffHomePage rh = new RediffHomePage(driver);
+        rh.Search().sendKeys("rediff");
+        rh.Submit().click();
 
     }
 }

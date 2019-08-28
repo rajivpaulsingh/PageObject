@@ -19,7 +19,6 @@ public class RediffLoginPage {
 
 
     public WebElement EmailID() {
-
         return driver.findElement(username);
     }
 
